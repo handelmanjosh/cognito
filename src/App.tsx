@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import UIHeader from './components/UIHeader';
+import SearchBar from './components/SearchBar';
+import Favorites from './components/Favorites';
+import Recent from './components/Recent';
+import Usage from './components/Usage';
+import Upload from './components/Upload';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col  w-full h-[100vh] px-10 gap-4">
+      <UIHeader />
+      <div className="flex flex-row items-center justify-center">
+        <SearchBar />
+      </div>
+      <div className="flex flex-row items-center justify-center gap-3 w-full h-[25%]">
+        <Recent />
+        <Favorites />
+        <Usage />
+        <Upload />
+      </div>
     </div>
   );
 }
